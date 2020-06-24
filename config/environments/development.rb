@@ -27,8 +27,19 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :test
+  host = 'localhost:3000'
+  config.action_mailer.default_url_options = { host: host, protocol: 'http<h1>Sample App</h1>
 
+    <p>Hi <%= @user.name %>,</p>
+    
+    <p>
+    Welcome to the Sample App! Click on the link below to activate your account:
+    </p>
+    
+    <%= link_to "Activate", edit_account_activation_url(@user.activation_token,
+                                                        email: @user.email) %>' }
   config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger.
